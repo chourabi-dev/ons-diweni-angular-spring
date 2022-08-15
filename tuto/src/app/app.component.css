@@ -1,0 +1,15 @@
+.out-of-stock{
+    background-color: rgb(254, 120, 120);
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.title{
+    color: green;
+}
+
+.out-of-stock-title{
+    color: red;
+}
+

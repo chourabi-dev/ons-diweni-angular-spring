@@ -1,1 +1,78 @@
-<h1> {{ name }} </h1>
+<!--<h1> {{ name }} </h1>
+
+
+<h1> {{ year }} </h1>
+
+
+<h1>
+    {{ 5*5 }}
+</h1>
+
+<h1>
+    {{ today }}
+</h1>
+
+<h1>
+    {{ age }}
+</h1>
+
+<h1>
+    {{ email }}
+</h1>
+
+<h1>
+    {{ employees }}
+</h1>
+
+<h1>
+    {{  employee.name }},  {{ employee.email }}
+</h1>-->
+
+<!--************************************arrays*******************************************-->
+
+<ul>
+    <li *ngFor="let e of employees" > {{ e }} </li>
+</ul>
+
+
+
+<table style="width: 100%;">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Title</th>
+            <th>Price</th>
+            <th>Stock</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let p of products">
+            <td>{{ p.id }}</td>
+            <td>
+
+               
+
+                <h3 [ngClass]=" p.stock == 0 ?  'out-of-stock-title'  :  'title'  ">
+                    {{ p.title }}
+                </h3>
+
+
+            </td>
+            <td>{{ p.price }}</td>
+            <td>
+
+                <div *ngIf=" p.stock != 0  ">
+                    {{ p.stock }}
+                </div>
+
+
+                <div *ngIf=" p.stock == 0  "   class="out-of-stock">
+                    out of stock
+                </div>
+
+            </td>
+            
+        </tr>
+    </tbody>
+</table>
