@@ -1,0 +1,31 @@
+<form  [formGroup]="productForm" (ngSubmit)="addProduct()" >
+    <div>
+        <label for="">Title  <span class="danger" *ngIf="  productForm.controls.title.valid == false ">*</span> </label> <br>
+        <input type="text" formControlName="title" > <br>
+
+        <p *ngIf=" productForm.controls.title.touched == true && productForm.controls.title.valid == false ">
+            <small class="danger">min length 3 chars</small>
+        </p>
+    </div>
+    <div>
+        <label for="">Quantity</label> <br>
+        <input type="number" formControlName="quantity" >
+    </div>
+    <div>
+        <label for="">Price</label>  <br>
+        <input type="text" formControlName="price" >
+    </div>
+    <div>
+        <label for="">Provider</label>  <br>
+        <input type="text" formControlName="provider" >
+    </div>
+
+
+    
+
+
+    <div>
+        <button type="submit"  [disabled]=" ! productForm.valid "  >Save</button>
+    </div>
+    
+</form>
