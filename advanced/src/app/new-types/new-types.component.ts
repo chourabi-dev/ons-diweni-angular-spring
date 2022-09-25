@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-new-types',
@@ -59,6 +60,34 @@ export class NewTypesComponent implements OnInit {
 
   /***************************** observable ************************/
 
+
+  stratTarcking(){
+      this.trackUser().subscribe( (data)=>{
+        console.log(data);
+        
+      }, (error)=>{
+        console.log(error);
+        
+      } )
+  }
+
+
+
+  trackUser(){
+    let observable = new Observable( (obsever)=>{
+
+
+      navigator.geolocation.watchPosition((position)=>{
+        obsever.next(position);
+      },(error)=>{
+        obsever.error(error);
+      })
+
+
+    } );
+
+    return observable;
+  }
 
   
 

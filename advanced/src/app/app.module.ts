@@ -11,6 +11,11 @@ import { EmailpipePipe } from './emailpipe.pipe';
 import { FormsComponent } from './forms/forms.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NewTypesComponent } from './new-types/new-types.component';
+import { HttpCallDemoComponent } from './http-call-demo/http-call-demo.component';
+
+
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -21,13 +26,15 @@ import { NewTypesComponent } from './new-types/new-types.component';
     MydatepipePipe,
     EmailpipePipe,
     FormsComponent,
-    NewTypesComponent
+    NewTypesComponent,
+    HttpCallDemoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,48 @@
+<div class="container">
+    <h1>Users list</h1>
+
+
+
+
+    <div class="alert alert-danger" *ngIf=" errorMessage != '' ">
+        {{ errorMessage }}
+    </div>
+
+
+    <div class="text-center" *ngIf=" isLoading == true ">
+        <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+    </div>
+
+
+
+    <div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Address</th>
+                    
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr *ngFor="let u of users">
+                    <td>{{ u.id }}</td>
+                    <td>{{ u.name }}</td>
+                    <td>{{ u.email }}</td>
+                    <td>{{ u.phone }}</td>
+                    <td>{{  u.address.city }} {{ u.address.street }}</td>
+                    
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+</div>
